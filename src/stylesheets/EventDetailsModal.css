@@ -1,0 +1,141 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.event-modal {
+    background-color: #ecffdc;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.event-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #ecffdc;
+
+}
+
+.event-modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+.event-modal-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #677160;
+}
+
+@media (min-width: 768px) {
+    .event-modal-content {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+.event-modal-image-container {
+    flex: 1;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .event-modal-image-container {
+        max-width: 300px;
+    }
+}
+
+.event-modal-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.event-modal-details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.event-modal-location h3,
+.event-modal-description h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.event-modal-description p {
+    margin: 0;
+    line-height: 1.5;
+    white-space: pre-line; /* Preserves line breaks from the original text */
+}
+
+.event-modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #ecffdc;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.event-action-button {
+    background-color: #677160;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-right: 2%;
+}
+
+.event-action-button:hover {
+    background-color: #475742;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

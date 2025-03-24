@@ -1,0 +1,146 @@
+.main-content {
+    position: fixed;
+    top: 10%;
+    left:20%; /* Aligns with the width of your sidebar */
+    width: 78%;
+    height: 80%;
+    margin-right: 2%;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 20px;
+    align-items: center;
+
+}
+
+.events-section {
+    width: 96%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 2%;
+    right: 2%;
+    height: 98%;
+    margin-bottom: 10%;
+}
+
+.event-title {
+    color: rgb(57, 62, 53);
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 30px;
+    border-radius: 10%;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ecffdc;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+
+
+
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+.event-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.page-button {
+    background-color: #677160;
+    color: #ecffdc;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    top: 2%
+}
+.view-button {
+    color: #677160;
+    background-color: #ecffdc;
+    margin-left: 5px;
+}
+
+.page-button:hover:not(:disabled) {
+    background-color: #556052;
+}
+
+.page-button:disabled {
+    background-color: #a5afa0;
+    cursor: not-allowed;
+}
+
+.page-indicator {
+    font-weight: 500;
+}
+
+
+.event-card.most-popular {
+    position: relative;
+    border: 3px solid gold;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(255, 215, 0, 0.2); /* Lighter gold background */
+    z-index: 2; /* Ensure it's above other cards */
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px; /* Position it slightly outside the card for visibility */
+    background-color: #FF8C00; /* Dark orange - more visible than gold */
+    color: white; /* White text for better contrast */
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 0.9rem; /* Slightly larger */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+    transform: rotate(10deg); /* Slight rotation for emphasis */
+    z-index: 3; /* Ensure badge is on top */
+}
+
+@keyframes pulse {
+    0% { transform: rotate(10deg) scale(1); }
+    50% { transform: rotate(10deg) scale(1.1); }
+    100% { transform: rotate(10deg) scale(1); }
+}
+
+.popular-badge {
+    animation: pulse 2s infinite ease-in-out;
+}
+.click-count{
+    color: #677160;
+}
